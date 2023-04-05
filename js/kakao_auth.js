@@ -9,7 +9,7 @@ console.log("getAccessToken",Kakao.Auth.getAccessToken());
 const kakaoLogin = ()=>{
     if(Kakao.Auth.getAccessToken())
     {
-        location.href="/main.html";
+        location.href="main.html";
         return ;
     }
 
@@ -18,7 +18,7 @@ const kakaoLogin = ()=>{
 
         success : function(response){
             console.log("kakaoLogin_Success",response);
-            location.href='/main.html';
+            location.href='main.html';
         },
         fail : function(error){
             console.log("kakaoLogin_error",error);
@@ -31,7 +31,7 @@ const kakaoLogin = ()=>{
 const myInfo = ()=>{
     if(!Kakao.Auth.getAccessToken())
     {
-        location.href='/login.html';
+        location.href='login.html';
         return ;
     }
 
@@ -57,7 +57,7 @@ const kakaoLogout = ()=>{
 
         Kakao.Auth.setAccessToken(null);        ////엑세스토큰 제거
 
-        location.href='/login.html';
+        location.href='login.html';
 }
 //연결끊기
 const kakaoUnlink = ()=>{
@@ -67,7 +67,7 @@ const kakaoUnlink = ()=>{
                 success : function(response){
                     console.log("kakaoUnlink",response);
                     Kakao.Auth.setAccessToken(null);    //엑세스토큰 제거
-                    location.href='/login.html';
+                    location.href='login.html';
                 },
                 fail : function(error){
                     console.log("kakaoUnlink",error);
