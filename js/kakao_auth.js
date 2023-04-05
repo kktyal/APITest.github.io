@@ -1,5 +1,5 @@
 
-Kakao.init('823e6296f29c70cb7913c86a770bdcfb')
+Kakao.init('91dd40081d3eb19559f20e6425ad71b0')
 console.log("Kakao",Kakao)
 console.log("isInitialized",Kakao.isInitialized())
 
@@ -18,7 +18,7 @@ const kakaoLogin = ()=>{
 
         success : function(response){
             console.log("kakaoLogin_Success",response);
-            location.href='main.html';
+            location.href='/main.html';
         },
         fail : function(error){
             console.log("kakaoLogin_error",error);
@@ -67,7 +67,7 @@ const kakaoUnlink = ()=>{
                 success : function(response){
                     console.log("kakaoUnlink",response);
                     Kakao.Auth.setAccessToken(null);    //엑세스토큰 제거
-                    location.href='login.html';
+                    location.href='/login.html';
                 },
                 fail : function(error){
                     console.log("kakaoUnlink",error);
